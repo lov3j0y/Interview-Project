@@ -28,7 +28,7 @@ test.describe('Check elements visibility.', () => {
   })
 
   test('Verify Forgot Password link is visible.', async ( { page } ) => {
-    expect(await loginPage.forgotPasswordLink.isVisible()).toBe(true);
+    expect(await loginPage.resetPasswordLink.isVisible()).toBe(true);
   })
 })
 
@@ -62,8 +62,8 @@ test.describe('Test "Log in" functionality', () => {
 })
 
   test('Forgot password link navigate to the correct url.', async ( { page } ) => {
-    await loginPage.forgotPasswordLink.click();
-    await loginPage.goToForgotPasswordPage();    
+    await loginPage.resetPasswordLink.click();
+    await loginPage.goToResetPasswordPage();    
     expect(await page.url()).toBe('https://platform.converge-digital.com/reset_password');
   })
 
