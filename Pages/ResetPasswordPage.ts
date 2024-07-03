@@ -9,10 +9,10 @@ export class ResetPasswordPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.resetPasswordEmailInput = page.getByTestId('resetPasswordEmailInput');
-        this.resetPasswordSubmitBtn = page.getByTestId('resetPasswordSubmitBtn');
-        this.resetPasswordGoBackLink = page.getByTestId('resetPasswordGoBack');
-        this.resetPasswordEmailErrorMsg = page.getByText('Email address is required');
+        this.resetPasswordEmailInput = page.locator('[data-testid="resetPasswordEmailInput"]');
+        this.resetPasswordSubmitBtn = page.locator('[data-testid="resetPasswordSubmitBtn"]');
+        this.resetPasswordGoBackLink = page.locator('[data-testid="resetPasswordGoBack"]');
+        this.resetPasswordEmailErrorMsg = page.locator('text=Email address is required');
     }
 
     async fillEmail(resetPasswordEmailInput: string) {

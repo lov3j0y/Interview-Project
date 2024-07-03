@@ -10,12 +10,13 @@ test.beforeEach('Go to the login page as a prerequisite.',async ( { page } ) => 
 
 // Visibility test.
 
-test('Check all elements visibility.',async ( { page } ) => {  
-    expect.soft(await loginPage.loginUsernameInput.isVisible()).toBe(true);  
-    expect.soft(await loginPage.loginPasswordInput.isVisible()).toBe(true);
-    expect.soft(await loginPage.loginSignInBtn.isVisible()).toBe(true);
-    expect.soft(await loginPage.convergeLogo.isVisible()).toBe(true);
-    expect.soft(await loginPage.resetPasswordLink.isVisible()).toBe(true);
+test('Check all elements visibility.',async ( { page } ) => {
+    expect.soft(await loginPage.convergeLogo.isVisible());  
+    expect.soft(await loginPage.selectTitle.isVisible());  
+    expect.soft(await loginPage.loginUsernameInput.isVisible());  
+    expect.soft(await loginPage.loginPasswordInput.isVisible());
+    expect.soft(await loginPage.loginSignInBtn.isVisible());    
+    expect.soft(await loginPage.resetPasswordLink.isVisible());
 })
 
 

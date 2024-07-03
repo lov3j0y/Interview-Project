@@ -11,17 +11,19 @@ export class LoginPage {
     readonly convergeLogo: Locator;
     readonly resetPasswordUrl = "https://platform.converge-digital.com/reset_password";
     readonly resetPasswordLink: Locator;
+    readonly selectTitle: Locator;
 
 constructor(page: Page) {
     this.page = page;    
-    this.loginUsernameInput = page.getByTestId('loginUsernameInput');
-    this.loginPasswordInput = page.getByTestId('loginPasswordInput');
-    this.loginSignInBtn = page.getByTestId('loginSignInBtn');
+    this.loginUsernameInput = page.locator('[data-testid="loginUsernameInput"]');
+    this.loginPasswordInput = page.locator('[data-testid="loginPasswordInput"]');
+    this.loginSignInBtn = page.locator('[data-testid="loginSignInBtn"]');
     this.message = page.locator('.el-message__content');
-    this.errorMessageUsername = page.getByText('username is required');
-    this.errorMessagePassword = page.getByText('password is required');
-    this.convergeLogo = page.getByAltText('Converge Logo');
-    this.resetPasswordLink = page.getByTestId('loginForgotPassword');    
+    this.errorMessageUsername = page.locator('text=username is required');
+    this.errorMessagePassword = page.locator('text=password is required');
+    this.convergeLogo = page.locator('.logo');
+    this.selectTitle = page.locator('.title');
+    this.resetPasswordLink = page.locator('[data-testid="loginForgotPassword"]');    
 }
 
 
