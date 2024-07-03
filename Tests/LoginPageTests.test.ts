@@ -8,28 +8,14 @@ test.beforeEach('Go to the login page as a prerequisite.',async ( { page } ) => 
   await loginPage.goToLoginPage();
 })
 
-// Visibility tests.
+// Visibility test.
 
-test.describe('Check elements visibility.', () => {
-  test('Verify username field is visible', async ( { page } ) => {  
-    expect (await loginPage.loginUsernameInput.isVisible()).toBe(true);
-  })
-
-  test('Verify password field is visible', async ( { page } ) => {
-    expect (await loginPage.loginPasswordInput.isVisible()).toBe(true);
-  })
-
-  test('Verify SignIn button is visible', async ( { page } ) => {
-    expect (await loginPage.loginSignInBtn.isVisible()).toBe(true);
-  })
-
-  test('Verify Converge logo is visible.', async ( { page } ) => {
-    expect(await loginPage.convergeLogo.isVisible()).toBe(true);
-  })
-
-  test('Verify Forgot Password link is visible.', async ( { page } ) => {
-    expect(await loginPage.resetPasswordLink.isVisible()).toBe(true);
-  })
+test('Check all elements visibility.',async ( { page } ) => {  
+    expect.soft(await loginPage.loginUsernameInput.isVisible()).toBe(true);  
+    expect.soft(await loginPage.loginPasswordInput.isVisible()).toBe(true);
+    expect.soft(await loginPage.loginSignInBtn.isVisible()).toBe(true);
+    expect.soft(await loginPage.convergeLogo.isVisible()).toBe(true);
+    expect.soft(await loginPage.resetPasswordLink.isVisible()).toBe(true);
 })
 
 
